@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bouquet</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="flowers">
+            <h1>Flowers for my lover</h1>
+            <img src="Photos/roses.png" alt="Bouquet of Flowers" class="bouquet">
+        </div>
+        <div class="message">
+           <p>I love you soooo much!</p>
+           <a href="home.html" class="btn hidden-btn">Home</a>
+        </div>
+
+        <script>
+            const flower = document.querySelector(".flowers");
+            const messageBox = document.querySelector(".message");
+            const hiddenBtn = document.querySelector(".hidden-btn");
+            
+            flower.addEventListener("click", () => {
+                messageBox.classList.add("show");
+                hiddenBtn.style.display = "inline-block";
+            });
+        </script>
+    </body>
+</html>
