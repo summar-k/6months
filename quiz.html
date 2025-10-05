@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz<title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>How Well Do You Know Us?</h1>
+
+        <div class="quiz" id="q1">
+            <p>1. question</p>
+            <button onclick="checkAnswer(this, 'wrong')">Option 1</button>
+            <button onclick="checkAnswer(this, 'correct')">Option 2</button>
+            <button onclick="checkAnswer(this, 'wrong')">Option 3</button>
+        </div>
+        <div class="quiz" id="q2">
+            <p>2. question</p>
+            <button onclick="checkAnswer(this, 'correct')">Option 1</button>
+            <button onclick="checkAnswer(this, 'wrong')">Option 2</button>
+            <button onclick="checkAnswer(this, 'wrong')">Option 3</button>
+        </div>
+        <div class="quiz" id="q3">
+            <p>3. question</p>
+            <button onclick="checkAnswer(this, 'wrong')">Option 1</button>
+            <button onclick="checkAnswer(this, 'correct')">Option 2</button>
+            <button onclick="checkAnswer(this, 'wrong')">Option 3</button>
+        </div>
+
+        <script>
+            function checkAnswer(button, type) {
+                if(type == 'correct') {
+                    alert("Correct!");
+                    const next = button.parentElement.nextElementSibling;
+                    if(next) {
+                        button.parentElement.style.display = 'none';
+                        next.style.display = 'block';
+                    }
+                    else {
+                        alert("You did it! YAY");
+                    }
+                }
+                else {
+                    alert("Try again!")
+                }
+            }
+        </script>
+
+    </body>
+</html>

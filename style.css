@@ -209,3 +209,27 @@ p {
     font-size: 24px;
     color: #B22234;
 }
+
+/* quiz */
+.quiz {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+button {
+    background: #D94C5C;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #B22234;
+}
