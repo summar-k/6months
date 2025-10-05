@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Quiz<title>
+        <title>Quiz</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h1>How Well Do You Know Us?</h1>
 
         <div class="quiz" id="q1">
-            <p>1. question</p>
-            <button onclick="checkAnswer(this, 'wrong')">Option 1</button>
-            <button onclick="checkAnswer(this, 'correct')">Option 2</button>
-            <button onclick="checkAnswer(this, 'wrong')">Option 3</button>
+            <p>1. When was our THIRD kiss?</p>
+            <button onclick="checkAnswer(this, 'wrong')">December 24th</button>
+            <button onclick="checkAnswer(this, 'correct')">December 25th</button>
+            <button onclick="checkAnswer(this, 'wrong')">December 26th</button>
+            <p class="feedback"></p>
         </div>
         <div class="quiz" id="q2">
-            <p>2. question</p>
-            <button onclick="checkAnswer(this, 'correct')">Option 1</button>
-            <button onclick="checkAnswer(this, 'wrong')">Option 2</button>
-            <button onclick="checkAnswer(this, 'wrong')">Option 3</button>
+            <p>2. Where was our first (real) date?</p>
+            <button onclick="checkAnswer(this, 'correct')">Dave and Busters</button>
+            <button onclick="checkAnswer(this, 'wrong')">Tyson's</button>
+            <button onclick="checkAnswer(this, 'wrong')">Movies</button>
+            <p class="feedback"></p>
         </div>
         <div class="quiz" id="q3">
-            <p>3. question</p>
-            <button onclick="checkAnswer(this, 'wrong')">Option 1</button>
-            <button onclick="checkAnswer(this, 'correct')">Option 2</button>
-            <button onclick="checkAnswer(this, 'wrong')">Option 3</button>
+            <p>3. Who SNORES the loudest?</p>
+            <button onclick="checkAnswer(this, 'wrong')">Summar</button>
+            <button onclick="checkAnswer(this, 'correct')">Favio</button>
+            <button onclick="checkAnswer(this, 'wrong')">Both same</button>
+            <p class="feedback"></p>
         </div>
 
         <script>
             function checkAnswer(button, type) {
-                if(type == 'correct') {
-                    alert("Correct!");
-                    const next = button.parentElement.nextElementSibling;
-                    if(next) {
-                        button.parentElement.style.display = 'none';
-                        next.style.display = 'block';
-                    }
-                    else {
-                        alert("You did it! YAY");
-                    }
-                }
+                const feedback = button.parentElement.querySelector('.feedback');
+                feedback.classList.remove('show', 'correct', 'wrong');
+                if (type === 'correct') {
+                    feedback.textContent = 'Correct!';
+                    feedback.classList.add('correct', 'show');
+                } 
                 else {
-                    alert("Try again!")
+                    feedback.textContent = 'Try again!';
+                    feedback.classList.add('wrong', 'show');
                 }
             }
         </script>
+
+        <a href="home.html" class="btn">Home</a>
 
     </body>
 </html>
